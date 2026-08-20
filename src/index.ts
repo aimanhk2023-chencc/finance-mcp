@@ -4,7 +4,7 @@ import { z } from "zod";
 
 const UA = "Mozilla/5.0 (compatible; finance-mcp/0.1; +https://github.com/aimanhk2023-chencc/finance-mcp)";
 
-async function getJson(url: string) {
+async function getJson(url: string): Promise<any> {
   const response = await fetch(url, {
     headers: {
       "User-Agent": UA,
@@ -14,7 +14,7 @@ async function getJson(url: string) {
   if (!response.ok) {
     throw new Error(`Upstream request failed (${response.status}) for ${new URL(url).hostname}`);
   }
-  return response.json<any>();
+  return await response.json();
 }
 
 function text(data: unknown) {
