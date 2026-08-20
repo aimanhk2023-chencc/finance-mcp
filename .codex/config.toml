@@ -1,0 +1,8 @@
+[mcp_servers.finance]
+url = "https://finance-mcp.aimanhk2023.workers.dev/mcp"
+enabled = true
+required = true
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+enabled_tools = ["stock_quote", "price_history", "option_chain", "finance_news", "market_snapshot"]
+default_tools_approval_mode = "auto"
